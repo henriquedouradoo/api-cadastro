@@ -1,5 +1,6 @@
-package dev.java10x.CadastroDeNinjas.model;
+package dev.java10x.CadastroDeNinjas.Ninjas.model;
 
+import dev.java10x.CadastroDeNinjas.Missoes.model.MissoesModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,11 +15,14 @@ public class NinjaModel {
     private String email;
     private int senha;
 
+    @ManyToOne
+    @JoinColumn(name = "idMissoes") // FK
+    private MissoesModel missoes;
+
     public NinjaModel() {
     }
 
-    public NinjaModel(Long id, String nome, String email, int senha) {
-        this.id = id;
+    public NinjaModel(String nome, String email, int senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
