@@ -27,28 +27,4 @@ public class NinjaModel {
     @JoinColumn(name = "idMissoes") // FK
     private MissoesModel missoes;
 
-    public NinjaModel() {
-    }
-
-    public NinjaModel(String nome, String email, int senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public int getSenha() {
-        return senha;
-    }
 }
